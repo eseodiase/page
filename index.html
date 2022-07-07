@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+        body{
+            background:#222;
+            color:azure;
+            height:100vh;
+            width:auto;
+            margin:0;
+            padding:0;
+            
+        }
+        .container{
+            text-align:center;
+            position:fixed;
+             height:100vh;
+              width:100vw;
+               margin:0;
+            padding:0;
+            bottom: 0;
+        }
+        .part1, .part2{
+            display:inline-block;
+        }
+            .part1 h1{
+                padding-top:110px;
+                font-size:45px;
+            }
+        .part2{
+            background:salmon;
+        }
+        .part1, .part2{
+            height:100vh;
+            margin:0;
+        }
+        .part1{
+            width:97vw;
+            transition:width 3s;
+          -webkit-transition:width 3s;
+        }
+        .part2{
+          width:2vw;
+          position:static;
+          z-index:999;
+          margin:0;
+          padding:0;
+          transition:width 3s;
+          -webkit-transition:width 3s;
+        }
+        .part2 p{
+           padding-top:210px; 
+        }
+        .pull{
+            background:salmon;
+            padding:35px 3px 35px 6px;
+            right:0;
+            position:fixed;
+            margin-right:6px;
+            border-radius:6px 0px 0px 6px;
+            
+        }
+        
+         .push{
+        background:#222;
+            padding:35px 3px 35px 6px;
+            left:0;
+            position:fixed;
+            margin-top:50vh;
+            margin-left:8px;
+            border-radius:0px 6px 6px 0px;
+            display :none;
+            transition:transform 8s ease-in;
+            -webkit-transition:transform 8s ease-in;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+        <section class="container">
+            <div class="part1">
+              <h1 class="roll">Hello World!</h1>  
+              
+               <span class="pull">
+                    
+                </span>
+            </div>
+            
+             <div class="part2">
+             
+             <span class="push">
+                    
+                </span>
+                
+                <p>The Next</p>
+            </div>
+        </section>
+        </header>
+        
+        <script>
+            window.onload = function(){
+                var pull = document.querySelector(".pull");
+                var push = document.querySelector(".push");
+                var roll = document.querySelector(".roll");
+                var part1 = document.querySelector(".part1");
+                var part2 = document.querySelector(".part2");
+                pull.onclick = function (){
+               part1.style.width="2vw"; 
+               part2.style.width ="97vw"; 
+               pull.style.display="none" ;
+               push.style.display="block" ;
+                }
+                
+                push.onclick = function (){
+                   part1.style.width="97vw"; 
+               part2.style.width ="2vw"; 
+               pull.style.display="block" ;
+               push.style.display="none" ; 
+               
+                }
+                
+            }
+        </script>
+    </body>
+</html>
